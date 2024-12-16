@@ -1,7 +1,0 @@
-SELECT
-	*
-FROM
-	microdata_enem
-WHERE
-	NU_NOTA_REDACAO NOTNULL
-	AND SG_UF_PROVA = "MA"
