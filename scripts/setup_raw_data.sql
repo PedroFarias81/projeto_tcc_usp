@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS raw_data_2022 (
+CREATE TABLE IF NOT EXISTS raw_data_2023 (
     NU_INSCRICAO VARCHAR(12),           -- Numero da Inscrição do Enem
     TP_FAIXA_ETARIA VARCHAR(2),         -- Faixa etária 
     TP_SEXO VARCHAR(1),                 -- Sexo

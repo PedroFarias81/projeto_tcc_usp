@@ -33,7 +33,12 @@ def read_sql_script(filename: str) -> str:
 
 def setup_database(conn: sqlite3.Connection, sql_script: str) -> None:
     """
-    Alguma Docstring
+    Função responsável por montar o schema da base de dados que será usada com
+    base em um script sql. 
+
+    Args:
+        conn (sqlite3.Connection): Conexão com o sqlite3
+        sql_script (str): Arquivo contendo o script sql que configura o setup do banco de dados
     """
     cursor = conn.cursor()
     cursor.executescript(sql_script)
@@ -81,6 +86,13 @@ def load_raw_data(filename: str, table_name: str, database_path: str) -> None:
             axis=1, 
             inplace=True
         )
+
+        #Permanecer apenas com dados do MA e com dados que tenham a nota de matemática válidas
+        chunk = chunk[
+            ((chunk["SG_UF_PROVA"] == "MA") | (chunk["SG_UF_ESC"] == "MA")) & (chunk["NU_NOTA_MT"].notna())
+        ]
+
+        #Salvar o arquivo no banco de dados
         save_to_database(table_name, chunk, conn)
 
     print("Dados armazenados dentro do banco de dados!")

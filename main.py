@@ -1,21 +1,21 @@
 from etl.extract import extract_raw_data
 from etl.load import load_raw_data
 from etl.transform import transform_raw_data
-
-URL = "https://download.inep.gov.br/microdados/microdados_enem_2022.zip"
-ZIP_FILE_NAME = "microdados_enem_2022.zip"
-EXTRACT_TO_PATH = "database"
-CSV_FILENAME = 'database/DADOS/MICRODADOS_ENEM_2022.csv'
-RAW_TABLE_NAME = "raw_data_2022"
-REFINED_TABLE_NAME = "refined_data_2022"
-DATABASE_PATH = "database/microdata_enem.db"
+from utils.utils import configure_global_variables
 
 if __name__ == "__main__":
-    #Extraindo os dados da fonte original INEP
-    extract_raw_data(URL, ZIP_FILE_NAME, EXTRACT_TO_PATH)
+    #Renomear os dados para o ano
+    YEAR = "2023"
+    global_variables = configure_global_variables(YEAR)
 
-    #Carregando os dados originais para o banco de dados local
-    load_raw_data(CSV_FILENAME, RAW_TABLE_NAME, DATABASE_PATH)
+    #Extraindo os dados da fonte original INEP
+    print("-----Extração dos Dados-----")
+    extract_raw_data(global_variables["URL"], global_variables["ZIP_FILE_NAME"])
 
     #Otimizando a base de dados carregada
-    transform_raw_data(REFINED_TABLE_NAME, DATABASE_PATH)
+    print("-----Transformação dos Dados-----")
+    transform_raw_data(global_variables["ZIP_FILE_NAME"], global_variables["EXTRACT_TO_PATH"])
+
+    #Carregando os dados originais para o banco de dados local
+    print("-----Carregamento dos Dados-----")
+    load_raw_data(global_variables["CSV_FILE_NAME"], global_variables["RAW_TABLE_NAME"], global_variables["DATABASE_PATH"])
