@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS raw_data_2023 (
+CREATE TABLE IF NOT EXISTS raw_data_2022 (
     NU_INSCRICAO VARCHAR(12),           -- Numero da Inscrição do Enem
     TP_FAIXA_ETARIA VARCHAR(2),         -- Faixa etária 
     TP_SEXO VARCHAR(1),                 -- Sexo
@@ -17,10 +17,6 @@ CREATE TABLE IF NOT EXISTS raw_data_2023 (
     TP_SIT_FUNC_ESC VARCHAR(1),         -- Situação de funcionamento (Escola)
     NO_MUNICIPIO_PROVA VARCHAR(150),    -- Nome do município da aplicação da prova
     SG_UF_PROVA VARCHAR(2),             -- Sigla da Unidade da Federação da aplicação da prova
-    CO_MUNICIPIO_ESC VARCHAR(7),        -- Código do Município da Escola
-    CO_UF_ESC VARCHAR(2),               -- Código da Sigla da Escola
-    CO_MUNICIPIO_PROVA VARCHAR(7),      -- Código do Municipio do Local de Prova 
-    CO_UF_PROVA VARCHAR(2),             -- Código da Sigla do Local de Prova
     NU_NOTA_CN DECIMAL(4, 2),           -- Nota da prova de Ciências da Natureza
     NU_NOTA_CH DECIMAL(4, 2),           -- Nota da prova de Ciências Humanas
     NU_NOTA_LC DECIMAL(4, 2),           -- Nota da prova de Linguagens e Códigos

@@ -5,7 +5,7 @@ from utils.utils import configure_global_variables
 
 if __name__ == "__main__":
     #Renomear os dados para o ano
-    YEAR = "2023"
+    YEAR = "2022"
     global_variables = configure_global_variables(YEAR)
 
     #Extraindo os dados da fonte original INEP

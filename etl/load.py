@@ -70,6 +70,10 @@ def load_raw_data(filename: str, table_name: str, database_path: str) -> None:
                 "CO_PROVA_CH",          # Código do tipo de prova de Ciências Humanas
                 "CO_PROVA_LC",          # Código do tipo de prova de Linguagens e Códigos
                 "CO_PROVA_MT",          # Código do tipo de prova de Matemática
+                "CO_MUNICIPIO_ESC",     # Código do Município da Escola
+                "CO_UF_ESC",            # Código da Sigla da Escola
+                "CO_MUNICIPIO_PROVA",   # Código do Municipio do Local de Prova 
+                "CO_UF_PROVA",          # Código da Sigla do Local de Prova
                 "TP_PRESENCA_CN",       # Presença na prova objetiva de Ciências da Natureza
                 "TP_PRESENCA_CH",       # Presença na prova objetiva de Ciências Humanas
                 "TP_PRESENCA_LC",       # Presença na prova objetiva de Linguagens e Códigos
