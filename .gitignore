@@ -1,5 +1,4 @@
 .venv
 microdata_enem.db
 __pycache__
-database
-.gitignore
+database/*
